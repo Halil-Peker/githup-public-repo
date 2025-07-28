@@ -36,11 +36,11 @@ export default function FileExplorer({ username, repoName, initialContents }: Fi
       ) : (
         <div>
           {loading && <p>Yükleniyor...</p>}
-          <ul className="space-y-2">
+          <ul className="">
             {contents.map((item) => (
               <li 
                 key={item.path}
-                className="flex items-center p-2 hover:bg-gray-100 rounded cursor-pointer"
+                className="flex items-center my-2 p-4 bg-[#202830] text-white hover:text-gray-200 rounded-sm hover:bg-gray-600  cursor-pointer"
                 onClick={() => item.type === 'dir' 
                   ? fetchContents(item.path) 
                   : setSelectedFile(item)

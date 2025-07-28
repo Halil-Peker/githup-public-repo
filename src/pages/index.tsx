@@ -53,18 +53,18 @@ export default function Home() {
 
   return (
     <div className="container mx-auto p-4">
-      <form onSubmit={handleSubmit} className="mb-6">
+      <form onSubmit={handleSubmit} className="mb-6 w-full ">
         <input
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="GitHub kullanıcı adı"
-          className="px-4 py-2 border rounded"
+          className="px-4 py-2 border rounded col-span-10 bg-[#202830] text-white"
           disabled={loading}
         />
         <button 
           type="submit" 
-          className="ml-2 px-4 py-2 bg-blue-500 text-white rounded"
+          className="ml-2 px-4 py-2 bg-blue-500 text-white rounded col-span-2 cursor-pointer"
           disabled={loading}
         >
           {loading ? 'Yükleniyor...' : 'Ara'}

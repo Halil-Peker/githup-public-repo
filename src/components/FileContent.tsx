@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { GitHubFile } from '@/types/github';
+import ReactMarkdown from 'react-markdown';
 
 interface FileContentProps {
   file: GitHubFile;
@@ -33,18 +34,17 @@ export default function FileContent({ file, onBack }: FileContentProps) {
 
   return (
     <div>
-      <button onClick={onBack} className="mb-4 px-3 py-1 bg-gray-200 rounded">
+      <button onClick={onBack} className="mb-4 px-3 py-1 bg-[#202830] rounded">
         ← Geri
       </button>
-      <div className="bg-gray-50 p-4 rounded">
+      <div className="bg-[#202830] p-4 rounded">
         <h3 className="font-bold mb-2">{file.name}</h3>
-        {loading ? (
-          <p>Yükleniyor...</p>
-        ) : (
-          <pre className="whitespace-pre-wrap text-sm overflow-x-auto">
-            {content}
-          </pre>
-        )}
+        {file.name === 'README.md' ? (
+          <ReactMarkdown>{content}</ReactMarkdown>
+        ) : (<pre className="whitespace-pre-wrap text-sm overflow-x-auto">
+          {content}
+        </pre>)}
+
       </div>
     </div>
   );
