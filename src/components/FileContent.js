@@ -1,13 +1,7 @@
 import { useState, useEffect } from 'react';
-import { GitHubFile } from '@/types/github';
 import ReactMarkdown from 'react-markdown';
 
-interface FileContentProps {
-  file: GitHubFile;
-  onBack: () => void;
-}
-
-export default function FileContent({ file, onBack }: FileContentProps) {
+export default function FileContent({ file, onBack }) {
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -44,7 +38,6 @@ export default function FileContent({ file, onBack }: FileContentProps) {
         ) : (<pre className="whitespace-pre-wrap text-sm overflow-x-auto">
           {content}
         </pre>)}
-
       </div>
     </div>
   );
