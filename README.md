@@ -16,7 +16,7 @@ read:user
 Aşağıda belirtilen linkten proje canlıya alındı fakat github'tan çekilen token vercel ile canlıya alınınca işlevselliğini kaybediyor. Bu sebeple proje canlıda ama token paylaşımı (.env dosyası) kapalı olduğu için işlevsel değil.
 [GitHub Repo Explorer'ı Canlı Görüntüle](https://github-repo-explorer-demo.vercel.app)
 
-## 🛠️ Kullanılan Teknolojiler
+## Kullanılan Teknolojiler
 
 - Frontend Framework: Next.js 13
 - UI Styling: Tailwind CSS
