@@ -2,7 +2,15 @@
 
 Next.js ile geliştirilmiş, GitHub kullanıcılarının public repolarını ve içeriklerini görüntülemeye yarayan bir web uygulaması. 
 
-Proje çalışabilir olması için .env dosyası ekleyip token ekleyiniz.
+Proje çalışabilir olması için .env dosyası ekleyip token ekleyiniz. (Token buraya eklendiğinde geçersiz oluyor bu sebeple buraya eklenmedi.)
+
+# GitHub API Token Ayarları
+- GitHub Developer Settings sayfasına gidin
+- "Generate new token" butonuna tıklayın
+- Aşağıdaki scope'ları seçin:
+public_repo
+read:user
+- Token oluşturduktan sonra kopyalayın ve .env.local dosyanıza ekleyin
 
 ## Canlı Demo
 Aşağıda belirtilen linkten proje canlıya alındı fakat github'tan çekilen token vercel ile canlıya alınınca işlevselliğini kaybediyor. Bu sebeple proje canlıda ama token paylaşımı (.env dosyası) kapalı olduğu için işlevsel değil.
