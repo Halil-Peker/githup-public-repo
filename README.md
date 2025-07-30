@@ -2,7 +2,7 @@
 
 Next.js ile geliştirilmiş, GitHub kullanıcılarının public repolarını ve içeriklerini görüntülemeye yarayan bir web uygulaması. 
 
-Proje çalışabilir olması için .env dosyası ekleyip token (NEXT_PUBLIC_GITHUB_TOKEN=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) ekleyiniz.
+Proje çalışabilir olması için .env dosyası ekleyip token ekleyiniz.
 
 ## Canlı Demo
 Aşağıda belirtilen linkten proje canlıya alındı fakat github'tan çekilen token vercel ile canlıya alınınca işlevselliğini kaybediyor. Bu sebeple proje canlıda ama token paylaşımı (.env dosyası) kapalı olduğu için işlevsel değil.
