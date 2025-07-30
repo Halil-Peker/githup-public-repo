@@ -99,7 +99,7 @@ export default function RepoDetail({ repoData, readmeContent, initialContents })
                             href={queryUsername ? `/?username=${queryUsername}` : '/'}
                             className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors w-fit"
                         >
-                            <LeftArrowIcon/>
+                            <LeftArrowIcon />
                             Kullanıcı Sayfasına Dön
                         </Link>
 
@@ -115,7 +115,7 @@ export default function RepoDetail({ repoData, readmeContent, initialContents })
                                 rel="noopener noreferrer"
                                 className="mt-4 md:mt-0 inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
                             >
-                                <GitHubIcon/>
+                                <GitHubIcon />
                                 GitHub
                             </a>
                         </div>
@@ -129,16 +129,16 @@ export default function RepoDetail({ repoData, readmeContent, initialContents })
                     <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
                         <div className="flex flex-wrap gap-4 text-sm text-gray-600">
                             <div className="flex items-center">
-                                <StarIcon className='mb-1 mr-1'/>
+                                <StarIcon className='mb-1 mr-1' />
                                 <span className="font-medium mr-1">{repoData.stargazers_count}</span> Stars
                             </div>
                             <div className="flex items-center">
-                               <ForkIcon fill="black"/>
+                                <ForkIcon fill="black" />
                                 <span className="font-medium mr-1">{repoData.forks_count}</span> Forks
                             </div>
                             {repoData.language && (
                                 <div className="flex items-center">
-                                    <DocumentIcon className="w-2 h-2 mb-1" /> 
+                                    <DocumentIcon className="w-2 h-2 mb-1" />
                                     {repoData.language}
                                 </div>
                             )}
@@ -166,10 +166,18 @@ export default function RepoDetail({ repoData, readmeContent, initialContents })
                         {activeTab === 'readme' ? (
                             <div className="prose max-w-none">
                                 {readmeContent ? (
-                                    <ReactMarkdown>{readmeContent}</ReactMarkdown>
+                                    <ReactMarkdown
+                                        components={{
+                                            //Bu kısım mardown içeriği css i daha düzgün gelsin diye eklendi. Düz yazı şeklinde geliyordu ve tüm sayfa içeriği eşit şekildeydi.
+                                            h1: ({ node, ...props }) => <h1 className="text-3xl font-bold my-4" {...props} />,
+                                            h2: ({ node, ...props }) => <h2 className="text-2xl font-bold my-3" {...props} />,
+                                            h3: ({ node, ...props }) => <h3 className="text-xl font-semibold my-2" {...props} />,
+                                            p: ({ node, ...props }) => <p className="text-base my-2" {...props} />,
+                                        }}
+                                    >{readmeContent}</ReactMarkdown>
                                 ) : (
                                     <div className="text-center py-12 text-gray-500">
-                                        <DocumentIcon className="w-16 h-16 mx-auto text-gray-300"/>
+                                        <DocumentIcon className="w-16 h-16 mx-auto text-gray-300" />
                                         <p className="mt-4 text-lg">No README found</p>
                                     </div>
                                 )}

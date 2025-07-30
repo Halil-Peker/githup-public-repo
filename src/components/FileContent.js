@@ -57,7 +57,15 @@ export default function FileContent({ file, onBack }) {
         ) : error ? (
           <div className="text-red-500">{error}</div>
         ) : file.name.split('.').pop().toLowerCase() === 'md' ? (
-          <ReactMarkdown>{content}</ReactMarkdown>
+          <ReactMarkdown
+            components={{
+              //Bu kısım mardown içeriği css i daha düzgün gelsin diye eklendi. Düz yazı şeklinde geliyordu ve tüm sayfa içeriği eşit şekildeydi.
+              h1: ({ node, ...props }) => <h1 className="text-3xl font-bold my-4" {...props} />,
+              h2: ({ node, ...props }) => <h2 className="text-2xl font-bold my-3" {...props} />,
+              h3: ({ node, ...props }) => <h3 className="text-xl font-semibold my-2" {...props} />,
+              p: ({ node, ...props }) => <p className="text-base my-2" {...props} />
+            }}
+          >{content}</ReactMarkdown>
         ) : (
           <pre className="whitespace-pre-wrap text-sm overflow-x-auto">
             {content}
