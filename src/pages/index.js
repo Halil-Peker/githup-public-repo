@@ -48,14 +48,14 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!username.trim() || loading) return;
-    
+
     await router.push(`/?username=${encodeURIComponent(username.trim())}`);
   };
 
   return (
     <div className={`min-h-screen bg-gradient-to-br from-gray-900 to-gray-600 ${hasSearched ? 'py-4' : 'flex items-center justify-center'}`}>
       <div className={`container mx-auto px-4 transition-all duration-300 ${hasSearched ? 'max-w-7xl' : 'max-w-md'}`}>
-        {/* Search Section */}
+
         <div className={`bg-gray-800 rounded-xl p-6 shadow-2xl ${hasSearched ? 'mb-8' : ''}`}>
           <h1 className="text-3xl font-bold text-center text-white mb-6">GitHub Repo Finder</h1>
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
@@ -67,8 +67,8 @@ export default function Home() {
               className="flex-1 px-4 py-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
               disabled={loading}
             />
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:from-blue-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 disabled:opacity-50"
               disabled={loading}
             >
@@ -82,7 +82,6 @@ export default function Home() {
           </form>
         </div>
 
-        {/* Results Section */}
         <div className="transition-all duration-300">
           {error && (
             <div className="mb-6 p-4 bg-red-900/20 border-l-4 border-red-500 text-red-200 rounded-r-lg">
